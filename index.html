@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Crizel Jean Carisma - DHT11 Monitoring</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+<main class="page">
+
+
+    <!-- ========================================= -->
+    <!-- HEADER -->
+    <!-- ========================================= -->
+
+    <header class="top">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                ♡
+            </div>
+
+            <div>
+
+                <h1>
+                    Crizel Jean Carisma
+                </h1>
+
+                <p>
+                    Temperature & Humidity Monitoring
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="live-status">
+
+            <span
+                id="statusDot"
+                class="status-dot"
+            ></span>
+
+            <span id="statusText">
+                CONNECTING
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================= -->
+    <!-- CURRENT SENSOR READINGS -->
+    <!-- ========================================= -->
+
+    <section class="current-section">
+
+
+        <div class="sensor-card">
+
+            <div class="sensor-icon">
+                🌡
+            </div>
+
+            <span class="small-label">
+                CURRENT TEMPERATURE
+            </span>
+
+            <strong
+                id="currentTemperature"
+                class="sensor-value"
+            >
+                -- °C
+            </strong>
+
+        </div>
+
+
+        <div class="sensor-card">
+
+            <div class="sensor-icon">
+                💧
+            </div>
+
+            <span class="small-label">
+                CURRENT HUMIDITY
+            </span>
+
+            <strong
+                id="currentHumidity"
+                class="sensor-value"
+            >
+                -- %
+            </strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- GRAPH -->
+    <!-- ========================================= -->
+
+    <section class="records-box">
+
+
+        <div class="records-heading">
+
+            <div>
+
+                <span class="small-label">
+                    SENSOR GRAPH
+                </span>
+
+                <h2>
+                    Temperature & Humidity
+                </h2>
+
+            </div>
+
+
+            <div class="date-control">
+
+                <label for="graphDate">
+                    Date
+                </label>
+
+                <select id="graphDate">
+
+                    <option value="">
+                        Select Date
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="chart-container">
+
+            <canvas
+                id="sensorChart"
+            ></canvas>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- SENSOR HISTORY -->
+    <!-- ========================================= -->
+
+    <section class="records-box">
+
+
+        <div class="records-heading">
+
+            <div>
+
+                <span class="small-label">
+                    HISTORY
+                </span>
+
+                <h2>
+                    Sensor Records
+                </h2>
+
+            </div>
+
+
+            <button
+                id="toggleHistory"
+                type="button"
+            >
+                Show History
+            </button>
+
+        </div>
+
+
+        <div
+            id="historyContent"
+            class="hidden"
+        >
+
+
+            <div class="history-controls">
+
+                <div class="date-control">
+
+                    <label for="historyDate">
+                        Select Date
+                    </label>
+
+                    <select id="historyDate">
+
+                        <option value="">
+                            Select Date
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="record-total">
+
+                    <span>
+                        TOTAL RECORDS
+                    </span>
+
+                    <strong id="recordCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Time
+                            </th>
+
+                            <th>
+                                Temperature
+                            </th>
+
+                            <th>
+                                Humidity
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="historyTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="3"
+                                class="empty"
+                            >
+                                Waiting for sensor records...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- WIFI -->
+    <!-- ========================================= -->
+
+    <section class="records-box wifi-section">
+
+
+        <div class="records-heading">
+
+            <div>
+
+                <span class="small-label">
+                    DEVICE SETTINGS
+                </span>
+
+                <h2>
+                    WiFi Manager
+                </h2>
+
+            </div>
+
+            <div class="wifi-icon">
+                ♡
+            </div>
+
+        </div>
+
+
+        <p>
+            Configure the WiFi connection
+            for your ESP32.
+        </p>
+
+
+        <a
+            href="/change-wifi"
+            class="wifi-button"
+        >
+            Change WiFi
+        </a>
+
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+
+    <footer>
+
+        <span>
+            Realtime Database
+        </span>
+
+        <span>
+            •
+        </span>
+
+        <span>
+            ESP32 DHT11 Monitor
+        </span>
+
+        <span>
+            •
+        </span>
+
+        <span>
+            CRIZEL JEAN CARISMA
+        </span>
+
+    </footer>
+
+
+</main>
+
+
+<!-- ========================================= -->
+<!-- CHART.JS -->
+<!-- ========================================= -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/chart.js"
+></script>
+
+
+<!-- ========================================= -->
+<!-- FIREBASE APP -->
+<!-- ========================================= -->
+
+<script
+    type="module"
+    src="app.js"
+></script>
+
+
+</body>
+
+</html>
