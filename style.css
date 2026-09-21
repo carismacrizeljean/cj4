@@ -1,0 +1,867 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BASE
+===================================================== */
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #eeeeee;
+
+    color: #493842;
+
+    min-height: 100vh;
+
+    padding: 30px 18px;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.page {
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 28px;
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+.brand-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 15px;
+
+    background: #f8d9e7;
+
+    color: #b34d78;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+
+.brand h1 {
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #4c3943;
+}
+
+
+.brand p {
+
+    margin-top: 3px;
+
+    font-size: 13px;
+
+    color: #9b818d;
+}
+
+
+/* =====================================================
+   LIVE STATUS
+===================================================== */
+
+.live-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    color: #8b6e7a;
+}
+
+
+.status-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #aaa;
+
+    transition: .2s ease;
+}
+
+
+/* =====================================================
+   CURRENT SENSOR SECTION
+===================================================== */
+
+.current-section {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 16px;
+}
+
+
+.sensor-card {
+
+    background: #ffffff;
+
+    border: 1px solid #f0dce5;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(128, 74, 100, 0.06);
+
+    text-align: center;
+}
+
+
+.sensor-icon {
+
+    width: 55px;
+
+    height: 55px;
+
+    margin:
+        0 auto 15px;
+
+    border-radius: 17px;
+
+    background: #f8d9e7;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+}
+
+
+.sensor-card .small-label {
+
+    display: block;
+
+    margin-bottom: 8px;
+}
+
+
+.sensor-value {
+
+    display: block;
+
+    font-size: 35px;
+
+    color: #b85f83;
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   LABEL
+===================================================== */
+
+.small-label {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    color: #bd7594;
+}
+
+
+/* =====================================================
+   GENERAL RECORD BOX
+===================================================== */
+
+.records-box {
+
+    margin-top: 16px;
+
+    background: #ffffff;
+
+    border: 1px solid #f0dce5;
+
+    border-radius: 18px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 8px 30px
+        rgba(128, 74, 100, 0.05);
+}
+
+
+/* =====================================================
+   RECORD HEADING
+===================================================== */
+
+.records-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+.records-heading h2 {
+
+    margin-top: 5px;
+
+    font-size: 20px;
+
+    color: #4d3b44;
+}
+
+
+/* =====================================================
+   DATE CONTROL
+===================================================== */
+
+.date-control {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.date-control label {
+
+    font-size: 11px;
+
+    color: #91737f;
+
+    font-weight: 600;
+}
+
+
+select {
+
+    height: 43px;
+
+    min-width: 150px;
+
+    border:
+        1px solid #e8cbd8;
+
+    border-radius: 11px;
+
+    padding:
+        0 12px;
+
+    font-size: 13px;
+
+    color: #513d47;
+
+    background: #fffafd;
+
+    outline: none;
+}
+
+
+select:focus {
+
+    border-color: #c9799b;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(201,121,155,.10);
+}
+
+
+/* =====================================================
+   CHART
+===================================================== */
+
+.chart-container {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 430px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button {
+
+    height: 43px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    padding:
+        0 21px;
+
+    background: #b85f83;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+
+button:hover {
+
+    background: #a94f75;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =====================================================
+   HISTORY CONTROLS
+===================================================== */
+
+.history-controls {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+.record-total {
+
+    min-width: 150px;
+
+    background: #fffafd;
+
+    border:
+        1px solid #f0dce5;
+
+    border-radius: 12px;
+
+    padding: 12px 15px;
+}
+
+
+.record-total span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    color: #a08691;
+
+    margin-bottom: 5px;
+}
+
+
+.record-total strong {
+
+    font-size: 20px;
+
+    color: #5a414d;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrapper {
+
+    overflow-x: auto;
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing:
+        0 7px;
+
+    min-width: 650px;
+}
+
+
+thead th {
+
+    padding:
+        11px 13px;
+
+    text-align: left;
+
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    color: #967e89;
+
+    border-bottom:
+        1px solid #f1e3e9;
+}
+
+
+tbody tr {
+
+    transition: .15s ease;
+}
+
+
+tbody tr:hover {
+
+    filter: brightness(.97);
+
+    transform:
+        translateX(1px);
+}
+
+
+tbody td {
+
+    padding:
+        12px 13px;
+
+    font-size: 12px;
+
+    color: #604b55;
+
+    border-top:
+        1px solid
+        rgba(100, 60, 80, .05);
+
+    border-bottom:
+        1px solid
+        rgba(100, 60, 80, .05);
+}
+
+
+/* =====================================================
+   DATE COLORS
+===================================================== */
+
+tbody tr.date-color-0 td {
+    background: #fff0f5;
+}
+
+tbody tr.date-color-1 td {
+    background: #f0f7ff;
+}
+
+tbody tr.date-color-2 td {
+    background: #f1fbf3;
+}
+
+tbody tr.date-color-3 td {
+    background: #fff8e9;
+}
+
+tbody tr.date-color-4 td {
+    background: #f6f0ff;
+}
+
+tbody tr.date-color-5 td {
+    background: #eefafa;
+}
+
+tbody tr.date-color-6 td {
+    background: #fff2eb;
+}
+
+tbody tr.date-color-7 td {
+    background: #f8f3ed;
+}
+
+
+/* =====================================================
+   ROUNDED ROW
+===================================================== */
+
+tbody tr td:first-child {
+
+    border-left:
+        4px solid transparent;
+
+    border-radius:
+        9px 0 0 9px;
+
+    font-weight: 700;
+}
+
+
+tbody tr td:last-child {
+
+    border-radius:
+        0 9px 9px 0;
+}
+
+
+/* =====================================================
+   DATE ACCENT
+===================================================== */
+
+tbody tr.date-color-0 td:first-child {
+    border-left-color: #e88bab;
+}
+
+tbody tr.date-color-1 td:first-child {
+    border-left-color: #83acd9;
+}
+
+tbody tr.date-color-2 td:first-child {
+    border-left-color: #81b995;
+}
+
+tbody tr.date-color-3 td:first-child {
+    border-left-color: #d8ad61;
+}
+
+tbody tr.date-color-4 td:first-child {
+    border-left-color: #a995d0;
+}
+
+tbody tr.date-color-5 td:first-child {
+    border-left-color: #72b8b2;
+}
+
+tbody tr.date-color-6 td:first-child {
+    border-left-color: #db9873;
+}
+
+tbody tr.date-color-7 td:first-child {
+    border-left-color: #b79b7a;
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty {
+
+    text-align: center;
+
+    padding:
+        30px !important;
+
+    color:
+        #a48e98 !important;
+
+    background:
+        #fffafd !important;
+
+    border-radius:
+        10px;
+}
+
+
+/* =====================================================
+   WIFI
+===================================================== */
+
+.wifi-section p {
+
+    color: #9b8790;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+
+    line-height: 1.6;
+}
+
+
+.wifi-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 13px;
+
+    background: #f8d9e7;
+
+    color: #b34d78;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+
+.wifi-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 43px;
+
+    padding:
+        0 21px;
+
+    border-radius: 11px;
+
+    background: #b85f83;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .2s ease;
+}
+
+
+.wifi-button:hover {
+
+    background: #a94f75;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =====================================================
+   HIDDEN
+===================================================== */
+
+.hidden {
+
+    display: none;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+    font-size: 10px;
+
+    color: #b09aa4;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 750px) {
+
+    body {
+
+        padding:
+            20px 12px;
+    }
+
+
+    .top {
+
+        align-items:
+            flex-start;
+
+        gap: 15px;
+
+        flex-direction:
+            column;
+    }
+
+
+    .current-section {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .records-heading {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+    }
+
+
+    .date-control {
+
+        width: 100%;
+    }
+
+
+    select {
+
+        width: 100%;
+    }
+
+
+    .history-controls {
+
+        align-items:
+            stretch;
+
+        flex-direction:
+            column;
+    }
+
+
+    .record-total {
+
+        width: 100%;
+    }
+
+
+    .chart-container {
+
+        height: 350px;
+    }
+
+
+    .sensor-value {
+
+        font-size: 32px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .brand h1 {
+
+        font-size: 20px;
+    }
+
+
+    .records-box {
+
+        padding: 17px;
+    }
+
+
+    .sensor-card {
+
+        padding: 20px;
+    }
+
+}

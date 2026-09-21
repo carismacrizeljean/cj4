@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Crizel WiFi Manager</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 20px;
+
+            font-family:
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: #eeeeee;
+
+            color: #493842;
+
+        }
+
+
+        .container {
+
+            width: 100%;
+
+            max-width: 430px;
+
+            background: #ffffff;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            border:
+                1px solid #f0dce5;
+
+            box-shadow:
+                0 15px 40px
+                rgba(128, 74, 100, 0.12);
+
+        }
+
+
+        .brand {
+
+            text-align: center;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .brand-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            margin:
+                0 auto 12px;
+
+            border-radius: 17px;
+
+            background: #f8d9e7;
+
+            color: #b34d78;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 28px;
+
+        }
+
+
+        h1 {
+
+            margin: 0;
+
+            font-size: 25px;
+
+            color: #4c3943;
+
+        }
+
+
+        .subtitle {
+
+            margin-top: 7px;
+
+            font-size: 13px;
+
+            color: #9b818d;
+
+            line-height: 1.5;
+
+        }
+
+
+        label {
+
+            display: block;
+
+            margin-top: 17px;
+
+            margin-bottom: 7px;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            color: #6d515e;
+
+        }
+
+
+        input {
+
+            width: 100%;
+
+            height: 44px;
+
+            padding:
+                0 13px;
+
+            border:
+                1px solid #e8cbd8;
+
+            border-radius: 11px;
+
+            font-size: 14px;
+
+            color: #513d47;
+
+            background: #fffafd;
+
+            outline: none;
+
+        }
+
+
+        input:focus {
+
+            border-color: #c9799b;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(201,121,155,.10);
+
+        }
+
+
+        button {
+
+            width: 100%;
+
+            height: 45px;
+
+            margin-top: 25px;
+
+            border: none;
+
+            border-radius: 11px;
+
+            background: #b85f83;
+
+            color: white;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+        }
+
+
+        button:hover {
+
+            background: #a94f75;
+
+        }
+
+
+        .note {
+
+            margin-top: 18px;
+
+            text-align: center;
+
+            font-size: 12px;
+
+            color: #9b8790;
+
+            line-height: 1.6;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            ♡
+        </div>
+
+        <h1>
+            Crizel WiFi Manager
+        </h1>
+
+        <div class="subtitle">
+            Configure the WiFi connection
+            for your ESP32
+        </div>
+
+    </div>
+
+
+    <form
+        method="POST"
+        action="/"
+    >
+
+
+        <label for="ssid">
+            WiFi Name (SSID)
+        </label>
+
+        <input
+            type="text"
+            id="ssid"
+            name="ssid"
+            placeholder="Enter WiFi name"
+            required
+        >
+
+
+        <label for="pass">
+            WiFi Password
+        </label>
+
+        <input
+            type="password"
+            id="pass"
+            name="pass"
+            placeholder="Enter WiFi password"
+        >
+
+
+        <label for="ip">
+            Static IP
+            <span style="font-weight:normal;">
+                (optional)
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="ip"
+            name="ip"
+            placeholder="Example: 192.168.1.50"
+        >
+
+
+        <label for="gateway">
+            Gateway
+            <span style="font-weight:normal;">
+                (optional)
+            </span>
+        </label>
+
+        <input
+            type="text"
+            id="gateway"
+            name="gateway"
+            placeholder="Example: 192.168.1.1"
+        >
+
+
+        <button type="submit">
+            Save WiFi Settings
+        </button>
+
+
+    </form>
+
+
+    <div class="note">
+
+        After saving, the ESP32 will restart
+        and automatically connect to the
+        selected WiFi network.
+
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
